@@ -1,7 +1,0 @@
-FROM ubuntu:16.04
-RUN apt-get update -y
-RUN apt-get install apache2 && systemctl start apache2.serviceRUN apt-get install php -y && apt install -y php7.1 php7.0-cli php7.1-common php7.1-mbstring php7.1-intl php7.1-xml php7.1-mysql php7.1-mcrypt
- && sudo apt-get install libapache2-mod-php  -y
-RUN systemctl enable apache2.service && systemctl enable mysql.service
-COPY --chown=www-data:www-data dokuwiki/ /var/www/html/
-RUN systemctl restart apache2.service
